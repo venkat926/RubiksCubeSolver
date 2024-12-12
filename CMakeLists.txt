@@ -3,4 +3,6 @@ project(RubiksCubeSolverExplain)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(RubiksCubeSolverExplain main.cpp)
+add_executable(RubiksCubeSolverExplain main.cpp
+        GenericRubiksCube.cpp
+        GenericRubiksCube.h)
