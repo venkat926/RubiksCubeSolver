@@ -4,5 +4,6 @@ project(RubiksCubeSolverExplain)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(RubiksCubeSolverExplain main.cpp
-        RubiksCube.cpp
-        RubiksCube.h)
+        model/RubiksCube.cpp
+        model/RubiksCube.h
+        model/RubiksCube3DArrayRepresentation.cpp)

@@ -2,7 +2,9 @@
 #ifndef GENERICRUBIKSCUBE_H
 #define GENERICRUBIKSCUBE_H
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <cstdint>
 using namespace std;
 
 class RubiksCube {
