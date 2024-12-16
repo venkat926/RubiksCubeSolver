@@ -26,17 +26,17 @@ int main() {
     /*
      * Testing RubiksCube1DModel
      */
-    RubiksCube1DArray cube;
-
-    cube.print();
-    if (cube.isSolved()) cout << "Cube is Solved!" << endl;
-    else cout << "Cube is Not Solved!" << endl;
-
-    cube.b();
-    cube.print();
-
-    if (cube.isSolved()) cout << "Cube is Solved!" << endl;
-    else cout << "Cube is Not Solved!" << endl;
+    // RubiksCube1DArray cube;
+    //
+    // cube.print();
+    // if (cube.isSolved()) cout << "Cube is Solved!" << endl;
+    // else cout << "Cube is Not Solved!" << endl;
+    //
+    // cube.b();
+    // cube.print();
+    //
+    // if (cube.isSolved()) cout << "Cube is Solved!" << endl;
+    // else cout << "Cube is Not Solved!" << endl;
 
 
 

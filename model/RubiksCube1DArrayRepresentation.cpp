@@ -230,3 +230,13 @@ public:
         return *this;
     }
 };
+
+struct Hash1d {
+    size_t operator()(const RubiksCube1DArray &r1) {
+        string str = "";
+        for (int i = 0; i < 54; i++) {
+            str.push_back(r1.cube[i]);
+        }
+        return hash<string>()(str);
+    }
+};
