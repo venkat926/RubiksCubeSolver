@@ -232,7 +232,7 @@ public:
 };
 
 struct Hash1d {
-    size_t operator()(const RubiksCube1DArray &r1) {
+    size_t operator()(const RubiksCube1DArray &r1) const{
         string str = "";
         for (int i = 0; i < 54; i++) {
             str.push_back(r1.cube[i]);

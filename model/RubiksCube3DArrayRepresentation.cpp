@@ -14,8 +14,8 @@ private:
 
         for (int i=0; i<3; i++) cube[idx][0][i] = temp_arr[2-i][0];
         for (int i=0; i<3; i++) cube[idx][i][2] = temp_arr[0][i];
-        for (int i=0; i<3; i++) cube[idx][2-i][i] = temp_arr[i][2];
-        for (int i=0; i<3; i++) cube[idx][2-i][0] = temp_arr[2-i][0];
+        for (int i=0; i<3; i++) cube[idx][2][2-i] = temp_arr[i][2];
+        for (int i=0; i<3; i++) cube[idx][2-i][0] = temp_arr[2][2-i];
     }
 
 public:
