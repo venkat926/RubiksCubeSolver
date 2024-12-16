@@ -7,9 +7,6 @@ using namespace std;
 #ifndef BFSSOLVER_H
 #define BFSSOLVER_H
 
-#endif //BFSSOLVER_H
-
-
 /*
  *  Typename T: RubiksCube Representation used (3D, 1D)
  *  Typename H: Corresponding Hash function
@@ -17,6 +14,7 @@ using namespace std;
 template<class T, class H>
 class BFSSolver {
 private:
+    T rubiksCube;
     int maxDepth;
     vector<RubiksCube::MOVE> moves;
     unordered_map<T, bool, H> visited;
@@ -60,7 +58,6 @@ private:
     }
 
 public:
-    T rubiksCube;
 
     BFSSolver(T rubiksCube, int maxDepth) {
         this->rubiksCube = rubiksCube;
@@ -81,4 +78,10 @@ public:
         return moves;
     }
 
+    void printSolvedRubiksCube() {
+        this->rubiksCube.print();
+    }
+
 };
+
+#endif //BFSSOLVER_H

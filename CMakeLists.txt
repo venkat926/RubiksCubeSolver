@@ -9,4 +9,5 @@ add_executable(RubiksCubeSolverExplain main.cpp
         model/RubiksCube3DArrayRepresentation.cpp
         model/RubiksCube1DArrayRepresentation.cpp
         solver/DFSSolver.h
-        solver/BFSSolver.h)
+        solver/BFSSolver.h
+        solver/IDDFSSolver.h)

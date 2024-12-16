@@ -7,8 +7,6 @@ using namespace std;
 #ifndef DFSSOLVER_H
 #define DFSSOLVER_H
 
-#endif //DFSSOLVER_H
-
 /*
  *  Typename T: RubiksCube Representation used (3D, 1D)
  *  Typename H: Corresponding Hash function
@@ -16,6 +14,7 @@ using namespace std;
 template<class T, class H>
 class DFSSolver {
 private:
+    T rubiksCube;
     vector<RubiksCube::MOVE> moves;
     int maxSearchDepth;
 
@@ -34,8 +33,6 @@ private:
 
 
 public:
-    T rubiksCube;
-
     DFSSolver(T rubiksCube, int maxSearchDepth=8) {
         this->rubiksCube = rubiksCube;
         this->maxSearchDepth = maxSearchDepth;
@@ -45,4 +42,15 @@ public:
         dfs(1);
         return moves;
     }
+
+    void printSolvedRubiksCube() {
+        this->rubiksCube.print();
+    }
+
+   T getRubiksCube() const {
+        return rubiksCube;
+    }
 };
+
+
+#endif //DFSSOLVER_H

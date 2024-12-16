@@ -3,6 +3,7 @@
 #include "model/RubiksCube1DArrayRepresentation.cpp"
 #include "solver/BFSSolver.h"
 #include "solver/DFSSolver.h"
+#include "solver/IDDFSSolver.h"
 using namespace std;
 int main() {
 
@@ -10,31 +11,59 @@ int main() {
     std::cout << "Hello and welcome to " << lang << "!\n";
 
     /*
-     * DFSSolver and BFSSolver testing
-     */
+    * IDDFSSolver testing
+    */
+
     RubiksCube1DArray rubiksCube;
-    rubiksCube.randomShuffleCube(5);
+    rubiksCube.randomShuffleCube(3);
     rubiksCube.print();
 
-    DFSSolver<RubiksCube1DArray, Hash1d> dfs_solver(rubiksCube, 7);
-    BFSSolver<RubiksCube1DArray, Hash1d> bfs_solver(rubiksCube, 7);
+    IDDFSSolver<RubiksCube1DArray, Hash1d> iddfs_solver(rubiksCube, 9);
 
-    auto dfs_start = std::chrono::high_resolution_clock::now();
-    dfs_solver.solve();
-    auto dfs_end = std::chrono::high_resolution_clock::now();
-    dfs_solver.rubiksCube.print();
+    auto iddfs_start = std::chrono::high_resolution_clock::now();
+    iddfs_solver.solve();
+    auto iddfs_end = std::chrono::high_resolution_clock::now();
+    iddfs_solver.printSolvedRubiksCube();
 
-
-    auto bfs_start = std::chrono::high_resolution_clock::now();
-    bfs_solver.solve();
-    auto bfs_end = std::chrono::high_resolution_clock::now();
-    bfs_solver.rubiksCube.print();
+    auto iddfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(iddfs_end - iddfs_start).count();
+    std::cout << "Time taken by IDDFSSolver: " << iddfs_duration << " seconds" << std::endl;
 
 
-    auto dfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(dfs_end - dfs_start).count();
-    std::cout << "Time taken by DFSSolver: " << dfs_duration << " seconds" << std::endl;
-    auto bfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(bfs_end - bfs_start).count();
-    std::cout << "Time taken by BFSSolver: " << bfs_duration << " seconds" << std::endl;
+    /*
+     * DFSSolver, BFSSolver and IDDFSSolver testing
+     */
+    // RubiksCube1DArray rubiksCube;
+    // rubiksCube.randomShuffleCube(5);
+    // rubiksCube.print();
+    //
+    // DFSSolver<RubiksCube1DArray, Hash1d> dfs_solver(rubiksCube, 7);
+    // BFSSolver<RubiksCube1DArray, Hash1d> bfs_solver(rubiksCube, 7);
+    // IDDFSSolver<RubiksCube1DArray, Hash1d> iddfs_solver(rubiksCube, 7);
+    //
+    // auto dfs_start = std::chrono::high_resolution_clock::now();
+    // dfs_solver.solve();
+    // auto dfs_end = std::chrono::high_resolution_clock::now();
+    // dfs_solver.printSolvedRubiksCube();
+    //
+    //
+    // auto bfs_start = std::chrono::high_resolution_clock::now();
+    // bfs_solver.solve();
+    // auto bfs_end = std::chrono::high_resolution_clock::now();
+    // bfs_solver.printSolvedRubiksCube();
+    //
+    // auto iddfs_start = std::chrono::high_resolution_clock::now();
+    // iddfs_solver.solve();
+    // auto iddfs_end = std::chrono::high_resolution_clock::now();
+    // iddfs_solver.printSolvedRubiksCube();
+    //
+    //
+    // auto dfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(dfs_end - dfs_start).count();
+    // std::cout << "Time taken by DFSSolver: " << dfs_duration << " seconds" << std::endl;
+    // auto bfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(bfs_end - bfs_start).count();
+    // std::cout << "Time taken by BFSSolver: " << bfs_duration << " seconds" << std::endl;
+    // auto iddfs_duration = std::chrono::duration_cast<std::chrono::duration<double>>(iddfs_end - iddfs_start).count();
+    // std::cout << "Time taken by IDDFSSolver: " << iddfs_duration << " seconds" << std::endl;
+
 
 
     {
