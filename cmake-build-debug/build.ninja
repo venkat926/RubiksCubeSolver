@@ -73,6 +73,18 @@ build CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube1DArrayRepresentati
   OBJECT_DIR = CMakeFiles/RubiksCubeSolverExplain.dir
   OBJECT_FILE_DIR = CMakeFiles/RubiksCubeSolverExplain.dir/model
 
+build CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/NibbleArray.cpp.o: CXX_COMPILER__RubiksCubeSolverExplain_unscanned_Debug /Users/kvn/CLionProjects/RubiksCubeSolverExplain/patternDatabase/NibbleArray.cpp || cmake_object_order_depends_target_RubiksCubeSolverExplain
+  DEP_FILE = CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/NibbleArray.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/RubiksCubeSolverExplain.dir
+  OBJECT_FILE_DIR = CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase
+
+build CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/PatternDatabase.cpp.o: CXX_COMPILER__RubiksCubeSolverExplain_unscanned_Debug /Users/kvn/CLionProjects/RubiksCubeSolverExplain/patternDatabase/PatternDatabase.cpp || cmake_object_order_depends_target_RubiksCubeSolverExplain
+  DEP_FILE = CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/PatternDatabase.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/RubiksCubeSolverExplain.dir
+  OBJECT_FILE_DIR = CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RubiksCubeSolverExplain
@@ -81,7 +93,7 @@ build CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube1DArrayRepresentati
 #############################################
 # Link the executable RubiksCubeSolverExplain
 
-build RubiksCubeSolverExplain: CXX_EXECUTABLE_LINKER__RubiksCubeSolverExplain_Debug CMakeFiles/RubiksCubeSolverExplain.dir/main.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube3DArrayRepresentation.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube1DArrayRepresentation.cpp.o
+build RubiksCubeSolverExplain: CXX_EXECUTABLE_LINKER__RubiksCubeSolverExplain_Debug CMakeFiles/RubiksCubeSolverExplain.dir/main.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube3DArrayRepresentation.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/model/RubiksCube1DArrayRepresentation.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/NibbleArray.cpp.o CMakeFiles/RubiksCubeSolverExplain.dir/patternDatabase/PatternDatabase.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk
   OBJECT_DIR = CMakeFiles/RubiksCubeSolverExplain.dir
   POST_BUILD = :

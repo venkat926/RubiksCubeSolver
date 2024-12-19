@@ -3,6 +3,7 @@
 #include "model/RubiksCube1DArrayRepresentation.cpp"
 #include "solver/BFSSolver.h"
 #include "solver/DFSSolver.h"
+#include "solver/IDAstarSolver.h"
 #include "solver/IDDFSSolver.h"
 using namespace std;
 int main() {
@@ -10,15 +11,33 @@ int main() {
     auto lang = "C++";
     std::cout << "Hello and welcome to " << lang << "!\n";
 
+
+    /*
+   * IDAstarSolver testing
+   */
+    RubiksCube1DArray rubiksCube;
+    rubiksCube.randomShuffleCube(5);
+    rubiksCube.print();
+
+    IDAstarSolver<RubiksCube1DArray, Hash1d> ida_solver(rubiksCube);
+
+    auto ida_start = std::chrono::high_resolution_clock::now();
+    ida_solver.solve();
+    auto ida_end = std::chrono::high_resolution_clock::now();
+    ida_solver.printSolvedRubiksCube();
+
+    auto ida_duration = std::chrono::duration_cast<std::chrono::duration<double>>(ida_end - ida_start).count();
+    std::cout << "Time taken by IDAstarSolver: " << ida_duration << " seconds" << std::endl;
+
     /*
     * IDDFSSolver testing
     */
 
-    RubiksCube1DArray rubiksCube;
-    rubiksCube.randomShuffleCube(3);
-    rubiksCube.print();
+    // RubiksCube1DArray rubiksCube;
+    // rubiksCube.randomShuffleCube(3);
+    // rubiksCube.print();
 
-    IDDFSSolver<RubiksCube1DArray, Hash1d> iddfs_solver(rubiksCube, 9);
+    IDDFSSolver<RubiksCube1DArray, Hash1d> iddfs_solver(rubiksCube, 7);
 
     auto iddfs_start = std::chrono::high_resolution_clock::now();
     iddfs_solver.solve();
